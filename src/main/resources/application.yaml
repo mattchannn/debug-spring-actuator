@@ -1,0 +1,35 @@
+spring:
+  security:
+    user:
+      name: admin
+      password: admin
+  data:
+    redis:
+      host: 'skilled-fawn-48667.upstash.io'
+      port: 6379
+      password: Ab4bAAIncDFiNDg5NjRmN2M2NzA0MTgxODQ0NmI1NDQzYzFjYjQ1MXAxNDg2Njcd
+      jedis:
+        pool:
+          min-idle: 0
+          max-idle: 8
+          enabled: true
+
+management:
+  health:
+    redis:
+      enabled: true
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      base-path: /
+      path-mapping:
+        health: ping
+
+custom:
+  config:
+    web:
+      ssl: false
+      cert:
+      key:
